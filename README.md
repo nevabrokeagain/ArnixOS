@@ -7,7 +7,7 @@ Only thing that somehow differs it from arch is bidirectional (imperative-declar
 
  2. How is it harder than archinstall?
 
-The OS has arnix-install, but to make it run you have to partition the disk by a tutorial and mount it, then the script starts (as from now only this mwthod of installation is available)
+The OS has arnix-install, but to make it run you have to partition the disk by a tutorial and mount it, then the script starts (as from now only this method of installation is available)
 
  3. What is the purpose of this project?
 
