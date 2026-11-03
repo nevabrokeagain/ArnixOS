@@ -1,4 +1,4 @@
-# ArnixOS - the future of arch-based masochism and continuation of HolyArch Project
+# ArnixOS - the future of arch-based masochism
 (this is a personal project made out of pure boredom, you can try this system but for now it cant be called stable)
 
  1. How does it differ from arch?
