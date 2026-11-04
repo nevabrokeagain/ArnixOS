@@ -1,6 +1,8 @@
 # ArnixOS - the future of arch-based masochism
 (this is a personal project made out of pure boredom, you can try this system but for now it cant be called stable)
+
 installer welcome message:
+
 <img width="295" height="169" alt="image" src="https://github.com/user-attachments/assets/575be569-ea36-46a7-80f2-e16e1cc85ef4" />
 
  1. How does it differ from arch?
