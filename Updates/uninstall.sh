@@ -126,6 +126,24 @@ else
     [[ -d /etc/arnix ]] && run rm -rf /etc/arnix
 fi
 
+# installed with setup.sh: plain files no package owns
+leftovers=()
+for f in /usr/bin/arnix /usr/bin/arnixconf /usr/share/arnix \
+         /etc/systemd/system/arnix-rebuild.service \
+         /etc/systemd/system/arnix-killswitch.service \
+         /etc/pacman.d/hooks/arnix-installed.hook \
+         /etc/pacman.d/hooks/arnix-removed.hook; do
+    [[ -e $f ]] || continue
+    # keep what a package still owns, e.g. the branding with --keep-branding
+    pacman -Qqo "$f" >/dev/null 2>&1 && continue
+    leftovers+=("$f")
+done
+if (( ${#leftovers[@]} )); then
+    step "removing arnix files installed with setup.sh"
+    run rm -rf "${leftovers[@]}"
+    run systemctl daemon-reload
+fi
+
 # 5. put Arch's name back ---------------------------------------------------
 if [[ $KEEP_BRANDING == 0 ]]; then
     step "restoring Arch's os-release and /etc/issue"
